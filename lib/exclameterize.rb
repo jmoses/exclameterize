@@ -3,17 +3,17 @@ require "exclameterize/version"
 module Exclameterize
   def exclameterize(suffix)
     if self =~ /\!$/
-      self.gsub(/\!$/, "_with_#{suffix}!")
+      self.gsub(/\!$/, "_#{suffix}!")
     else
-      self + "_with_#{suffix}"
+      self + "_#{suffix}"
     end
   end
 
   def unexclameterize(suffix)
     if self =~ /\!$/
-      self.gsub(/_with_#{suffix}\!$/, "!")
+      self.gsub(/_#{suffix}\!$/, "!")
     else
-      self.gsub(/_with_#{suffix}$/, '')
+      self.gsub(/_#{suffix}$/, '')
     end
   end
 end
